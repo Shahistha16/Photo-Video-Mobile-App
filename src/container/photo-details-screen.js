@@ -33,7 +33,7 @@ export default class PhotoDetailsScreen extends React.Component {
           onPress={() => {
             this.props.navigation.goBack();
           }}>
-          <Image source={Images.backButton} />
+          <Image source={Images.backButton} style={{tintColor: 'white'}} />
         </TouchableOpacity>
         <Text style={styles.headerText}>{'hello'}</Text>
       </View>

@@ -14,7 +14,6 @@ import Video from 'react-native-video';
 import MediaControls, {PLAYER_STATES} from 'react-native-media-controls';
 import {TitleHeader} from '../components';
 
-
 export default class VideoDetailsScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +33,17 @@ export default class VideoDetailsScreen extends React.Component {
   }
 
   renderHeader() {
-    return <TitleHeader title={"hello"} />;
+    return (
+      <View style={styles.containerHeader}>
+        <TouchableOpacity
+          onPress={() => {
+            this.props.navigation.goBack();
+          }}>
+          <Image source={Images.backButton} style={{tintColor: 'white'}} />
+        </TouchableOpacity>
+        <Text style={styles.headerText}>{'hello'}</Text>
+      </View>
+    );
   }
 
   addToFavourites = () => {
